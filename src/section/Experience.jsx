@@ -21,13 +21,14 @@ const experiences = [
     id: 2,
     type: "work",
     period: "01/2024 - 04/2024",
-    role: "Frontend Developer Intern",
-    company: "IT Technology Solutions",
-    location: "Ho Chi Minh City, Vietnam",
+    role: "Frontend Developer Intern (OJT)",
+    company: "BRB Software",
+    companyUrl: "https://brightbrain.vn/",
+    location: "Can Tho, Vietnam",
     description: [
-      "Assisted senior developers in building UI components and implementing responsive layouts using React.",
-      "Learned company development workflows, RESTful API integration, and version control using Git.",
-      "Participated in testing, bug fixing, and team code reviews during the 4-month internship program.",
+      "Completed 4-month On-the-Job Training (OJT) internship at BRB Software, contributing to real-world client projects.",
+      "Built responsive UI components and implemented modern layouts using React and Tailwind CSS.",
+      "Integrated RESTful APIs, participated in code reviews, and collaborated with senior developers using Git workflows.",
     ],
     skills: ["React", "JavaScript (ES6+)", "Tailwind CSS", "REST API", "Git"],
   },
@@ -36,7 +37,7 @@ const experiences = [
     type: "education",
     period: "2022 - 01/2024",
     role: "Bachelor of Information Technology",
-    company: "University of Technology",
+    company: "FPT University Can Tho",
     location: "Vietnam",
     description: [
       "Served as Team Leader for over 6 academic project teams, managing task allocation, timeline tracking, and presentation.",
@@ -120,7 +121,12 @@ export const Experience = () => {
                         </h3>
 
                         <p className="text-sm font-medium text-muted-foreground mt-0.5">
-                          {exp.company} • <span className="text-xs">{exp.location}</span>
+                          {exp.companyUrl ? (
+                            <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">{exp.company}</a>
+                          ) : (
+                            exp.company
+                          )}
+                          {" "}• <span className="text-xs">{exp.location}</span>
                         </p>
                       </div>
                     </div>

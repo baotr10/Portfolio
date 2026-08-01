@@ -66,7 +66,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
+    <section id="contact" className="pt-32 pb-12 relative overflow-hidden">
       {/* Background Glow Orbs */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 -right-20 w-96 h-96 bg-highlight/10 rounded-full blur-[140px] pointer-events-none" />
