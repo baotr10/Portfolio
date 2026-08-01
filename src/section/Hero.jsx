@@ -58,11 +58,11 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden mesh-gradient">
       {/* Background Image & Gradient Overlays */}
       <div className="absolute inset-0">
-        <img src="/hero-bg.jpg" alt="Hero Image" className="w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-linear-to-b from-transparent via-background/40 to-background" />
+        <img src="/hero-bg.jpg" alt="Hero Image" className="w-full h-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/30 via-background/60 to-background" />
       </div>
 
       {/* Decorative Radial Glow Orbs */}
@@ -81,7 +81,7 @@ export const Hero = () => {
               width: dot.size,
               height: dot.size,
               opacity: dot.opacity,
-              boxShadow: "0 0 10px var(--color-primary)",
+              boxShadow: "0 0 12px rgba(37, 99, 235, 0.4)",
               "--duration": dot.duration,
               "--delay": dot.delay,
               "--tx": dot.tx,
@@ -176,7 +176,7 @@ export const Hero = () => {
                   className="absolute inset-0 rounded-3xl pointer-events-none transition-opacity duration-300 z-20"
                   style={{
                     opacity: tilt.opacity,
-                    background: `radial-gradient(500px circle at ${tilt.cursorX}px ${tilt.cursorY}px, rgba(32, 178, 166, 0.25), transparent 60%)`,
+                    background: `radial-gradient(500px circle at ${tilt.cursorX}px ${tilt.cursorY}px, rgba(37, 99, 235, 0.2), transparent 60%)`,
                   }}
                 />
 

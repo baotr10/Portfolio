@@ -52,7 +52,7 @@ export const Experience = () => {
   const [activeId, setActiveId] = useState(1);
 
   return (
-    <section id="experience" className="py-32 relative overflow-hidden">
+    <section id="experience" className="py-32 relative overflow-hidden mesh-gradient">
       {/* Background Orbs Glow */}
       <div className="absolute top-1/3 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-[130px] pointer-events-none" />

@@ -147,7 +147,7 @@ const ProjectCard = ({ project, idx }) => {
 
 export const Project = () => {
   return (
-    <section id="project" className="py-32 relative overflow-hidden">
+    <section id="project" className="py-32 relative overflow-hidden mesh-gradient-alt">
       {/* Background Orbs Glow */}
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 -left-20 w-96 h-96 bg-highlight/10 rounded-full blur-[130px] pointer-events-none" />

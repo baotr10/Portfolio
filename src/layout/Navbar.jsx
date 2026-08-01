@@ -30,10 +30,10 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScroll ? "bg-background/80 backdrop-blur-md py-3 shadow-md border-none" : "bg-transparent py-5"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScroll ? "bg-white/80 backdrop-blur-xl py-3 shadow-[0_4px_30px_rgba(37,99,235,0.08)] border-b border-border/40" : "bg-transparent py-5 border-b border-transparent"}`}>
       <nav className="container mx-auto px-6 flex items-center justify-between relative">
         <a href="#" className="text-xl font-bold tracking-tight hover:text-primary">
-          Henry<span>.</span>
+          Henry<span className="text-primary">.</span>
         </a>
 
         {/* Desktop Nav */}

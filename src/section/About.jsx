@@ -105,7 +105,7 @@ const TiltCard = ({ highlight, index }) => {
 
 export const About = () => {
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="about" className="py-32 relative overflow-hidden mesh-gradient-alt">
       {/* Decorative Glow Orbs */}
       <div className="absolute top-1/3 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-[130px] pointer-events-none" />
@@ -135,23 +135,23 @@ export const About = () => {
               </p>
             </div>
 
-            {/* Interactive Developer Code Window */}
-            <div className="glass rounded-2xl p-5 border border-primary/30 shadow-2xl relative overflow-hidden font-mono text-xs animate-fade-in animation-delay-300 group hover:border-primary/60 hover:shadow-[0_0_25px_color-mix(in_srgb,var(--color-primary)_25%,transparent)] transition-all duration-300">
-              <div className="flex items-center justify-between mb-3 pb-3 border-b border-border/50">
+            {/* Interactive Developer Code Window - Dark Theme */}
+            <div className="code-window rounded-2xl p-5 shadow-2xl relative overflow-hidden font-mono text-xs animate-fade-in animation-delay-300 group hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.35)] transition-all duration-500">
+              <div className="flex items-center justify-between mb-3 pb-3 border-b border-slate-700/50">
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
                   <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
                   <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
                 </div>
-                <span className="text-[11px] text-muted-foreground font-sans font-medium">developer.config.ts</span>
+                <span className="text-[11px] text-slate-400 font-sans font-medium">developer.config.ts</span>
               </div>
-              <pre className="text-slate-700 leading-relaxed overflow-x-auto">
+              <pre className="text-slate-300 leading-relaxed overflow-x-auto">
                 <code>
-                  <span className="text-purple-600 font-semibold">const</span> <span className="text-blue-600 font-semibold">developer</span> = &#123;<br />
-                  &nbsp;&nbsp;<span className="text-blue-600 font-medium">name</span>: <span className="text-emerald-600 font-medium">"Tran Gia Bao"</span>,<br />
-                  &nbsp;&nbsp;<span className="text-blue-600 font-medium">role</span>: <span className="text-emerald-600 font-medium">"Software Engineer"</span>,<br />
-                  &nbsp;&nbsp;<span className="text-blue-600 font-medium">skills</span>: [<span className="text-emerald-600 font-medium">"React"</span>, <span className="text-emerald-600 font-medium">"Next.js"</span>, <span className="text-emerald-600 font-medium">"TypeScript"</span>],<br />
-                  &nbsp;&nbsp;<span className="text-blue-600 font-medium">status</span>: <span className="text-emerald-600 font-bold">"Ready to innovate 🚀"</span>,<br />
+                  <span className="text-purple-400 font-semibold">const</span> <span className="text-blue-400 font-semibold">developer</span> = &#123;<br />
+                  &nbsp;&nbsp;<span className="text-cyan-400">name</span>: <span className="text-emerald-400">"Tran Gia Bao"</span>,<br />
+                  &nbsp;&nbsp;<span className="text-cyan-400">role</span>: <span className="text-emerald-400">"Frontend Developer"</span>,<br />
+                  &nbsp;&nbsp;<span className="text-cyan-400">skills</span>: [<span className="text-emerald-400">"React"</span>, <span className="text-emerald-400">"Next.js"</span>, <span className="text-emerald-400">"TypeScript"</span>],<br />
+                  &nbsp;&nbsp;<span className="text-cyan-400">status</span>: <span className="text-emerald-400 font-bold">"Ready to innovate"</span>,<br />
                   &#125;;
                 </code>
               </pre>

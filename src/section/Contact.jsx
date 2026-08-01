@@ -66,7 +66,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="pt-32 pb-12 relative overflow-hidden">
+    <section id="contact" className="pt-32 pb-12 relative overflow-hidden mesh-gradient-alt">
       {/* Background Glow Orbs */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 -right-20 w-96 h-96 bg-highlight/10 rounded-full blur-[140px] pointer-events-none" />
@@ -103,7 +103,7 @@ export const Contact = () => {
                     href={info.href}
                     target={info.href.startsWith("http") ? "_blank" : "_self"}
                     rel="noopener noreferrer"
-                    className="glass rounded-2xl p-5 border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_color-mix(in_srgb,var(--color-primary)_15%,transparent)] group flex items-center gap-4 block"
+                    className="glass rounded-2xl p-5 border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_color-mix(in_srgb,var(--color-primary)_15%,transparent)] group flex items-center gap-4"
                   >
                     <div className="w-12 h-12 rounded-xl glass border border-primary/30 flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shrink-0">
                       <Icon className="w-5 h-5" />
@@ -229,9 +229,13 @@ export const Contact = () => {
         </div>
 
         {/* Footer Copyright */}
-        <div className="mt-24 pt-8 border-t border-border/40 text-center text-xs text-muted-foreground flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Tran Gia Bao. All rights reserved.</p>
-          <p>Built with React, Next.js & Tailwind CSS</p>
+        <div className="mt-24 pt-8 border-t border-border/40">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+            <p>© {new Date().getFullYear()} Tran Gia Bao. All rights reserved.</p>
+            <p className="flex items-center gap-1.5">
+              Built with using React & Tailwind CSS
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -9,16 +9,14 @@ const testimonials = [
     role: "Department of Software Engineering",
     company: "FPT University Can Tho",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Lecturer",
-    rating: 5,
   },
   {
     id: 2,
     quote: "During his 4-month internship, Bao proved to be an eager learner with a solid foundation in React and modern front-end tools. He consistently met project deadlines and maintained clean, responsive code.",
     name: "Senior Frontend Lead",
     role: "Internship Mentor",
-    company: "IT Technology Solutions",
+    company: "BRB Software",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mentor",
-    rating: 5,
   },
   {
     id: 3,
@@ -27,13 +25,12 @@ const testimonials = [
     role: "Software Engineering Peer",
     company: "FPT University Can Tho",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Teammate",
-    rating: 5,
   },
 ];
 
 export const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-32 relative overflow-hidden">
+    <section id="testimonials" className="py-32 relative overflow-hidden mesh-gradient">
       {/* Background Orbs Glow */}
       <div className="absolute top-1/3 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 -left-20 w-96 h-96 bg-highlight/10 rounded-full blur-[130px] pointer-events-none" />
@@ -67,13 +64,6 @@ export const Testimonials = () => {
               <div>
                 {/* Header Rating & Quote Icon */}
                 <div className="flex items-center justify-between mb-6">
-                  {/* Star Rating */}
-                  <div className="flex items-center gap-1">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Star key={`star-${item.id}-${i}`} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-
                   <Quote className="w-8 h-8 text-primary/30 group-hover:text-primary/60 transition-colors" />
                 </div>
 
