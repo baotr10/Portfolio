@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { Button } from "@/components/Button";
 import { ArrowRight, Download, Sparkles } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/SocialIcons";
+import { GithubIcon } from "@/components/SocialIcons";
 
 // My skills
 const skills = [
@@ -138,8 +138,7 @@ export const Hero = () => {
               <span className="text-sm font-medium text-muted-foreground">Follow:</span>
               <div className="flex items-center gap-3">
                 {[
-                  { icon: GithubIcon, href: "https://github.com", label: "GitHub" },
-                  { icon: LinkedinIcon, href: "https://linkedin.com", label: "LinkedIn" },
+                  { icon: GithubIcon, href: "https://github.com/Tranbao100304", label: "GitHub" },
                 ].map((social, idx) => {
                   const Icon = social.icon;
                   return (

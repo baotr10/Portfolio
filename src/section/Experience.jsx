@@ -20,7 +20,7 @@ const experiences = [
   {
     id: 2,
     type: "work",
-    period: "01/2024 - 04/2024",
+    period: "01/2025 - 04/2025",
     role: "Frontend Developer Intern (OJT)",
     company: "BRB Software",
     companyUrl: "https://brightbrain.vn/",

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Code2, Rocket, Sparkles, Layout } from "lucide-react";
+import { Code2, Rocket, Sparkles, Layout, GraduationCap } from "lucide-react";
 
 // Highlight cards data
 const highlights = [
@@ -125,43 +125,28 @@ export const About = () => {
               <span className="text-primary font-serif italic font-semibold glow-text">user-centric</span> web experiences that scale.
             </h2>
 
-            {/* Description about me */}
-            <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200 leading-relaxed text-base">
-              <p>
-                Hi, I'm Tran Gia Bao - a passionate software engineer specializing in building modern, performant web applications using React, Next.js, and TypeScript.
+            {/* Description & Education Badge */}
+            <div className="space-y-6 animate-fade-in animation-delay-200">
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Hi, I'm <strong className="text-foreground font-semibold">Tran Gia Bao</strong> - a passionate software engineer specializing in building modern, performant web applications with React, Next.js, and TypeScript. Focus on clean code, intuitive UX/UI design, and high performance.
               </p>
-              <p>
-                My development philosophy centers on clean code, seamless user interactions, and continuous learning. I love turning complex challenges into elegant digital solutions.
-              </p>
-            </div>
 
-            {/* Interactive Developer Code Window - Dark Theme */}
-            <div className="code-window rounded-2xl p-5 shadow-2xl relative overflow-hidden font-mono text-xs animate-fade-in animation-delay-300 group hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.35)] transition-all duration-500">
-              <div className="flex items-center justify-between mb-3 pb-3 border-b border-slate-700/50">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
+              {/* Compact Sleek Education Card */}
+              <div className="glass rounded-2xl p-5 border border-primary/20 hover:border-primary/40 transition-all flex items-center justify-between gap-4 shadow-md">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <GraduationCap className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-foreground">FPT University Can Tho</h4>
+                    <p className="text-xs text-muted-foreground">Bachelor of Software Engineering (2022 – 2026)</p>
+                  </div>
                 </div>
-                <span className="text-[11px] text-slate-400 font-sans font-medium">developer.config.ts</span>
-              </div>
-              <pre className="text-slate-300 leading-relaxed overflow-x-auto">
-                <code>
-                  <span className="text-purple-400 font-semibold">const</span> <span className="text-blue-400 font-semibold">developer</span> = &#123;<br />
-                  &nbsp;&nbsp;<span className="text-cyan-400">name</span>: <span className="text-emerald-400">"Tran Gia Bao"</span>,<br />
-                  &nbsp;&nbsp;<span className="text-cyan-400">role</span>: <span className="text-emerald-400">"Frontend Developer"</span>,<br />
-                  &nbsp;&nbsp;<span className="text-cyan-400">skills</span>: [<span className="text-emerald-400">"React"</span>, <span className="text-emerald-400">"Next.js"</span>, <span className="text-emerald-400">"TypeScript"</span>],<br />
-                  &nbsp;&nbsp;<span className="text-cyan-400">status</span>: <span className="text-emerald-400 font-bold">"Ready to innovate"</span>,<br />
-                  &#125;;
-                </code>
-              </pre>
-            </div>
 
-            {/* Mission Statement */}
-            <div className="glass rounded-2xl p-6 glow-border border-primary/20 animate-fade-in animation-delay-400">
-              <p className="text-base font-medium italic text-foreground leading-relaxed">
-                "My mission is to create innovative, intuitive web experiences that solve real-world problems and bring value to users."
-              </p>
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 shrink-0">
+                  GPA 3.23 / 4.0
+                </span>
+              </div>
             </div>
           </div>
 

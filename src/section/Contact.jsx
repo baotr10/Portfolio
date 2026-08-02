@@ -131,22 +131,13 @@ export const Contact = () => {
               </h4>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://github.com/trangiabao100304"
+                  href="https://github.com/Tranbao100304"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2.5 px-4 py-2.5 rounded-full glass border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-300 hover:scale-105 text-sm font-medium"
                 >
                   <GithubIcon className="w-4 h-4" />
                   <span>GitHub</span>
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 px-4 py-2.5 rounded-full glass border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-300 hover:scale-105 text-sm font-medium"
-                >
-                  <LinkedinIcon className="w-4 h-4" />
-                  <span>LinkedIn</span>
                 </a>
               </div>
             </div>

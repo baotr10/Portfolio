@@ -3,8 +3,8 @@ import { Hero } from "@/section/Hero"
 import { About } from "@/section/About"
 import { Experience } from "@/section/Experience"
 import { Project } from "@/section/Project"
-import { Testimonials } from "@/section/Testimonials"
 import { Contact } from "@/section/Contact"
+import { Certificates } from "./section/Certificates"
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
         <About />
         <Project />
         <Experience />
-        <Testimonials />
+        <Certificates />
         <Contact />
       </main>
     </div>
