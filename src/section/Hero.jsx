@@ -126,7 +126,7 @@ export const Hero = () => {
                   Contact me <ArrowRight className="w-5 h-5" />
                 </Button>
               </a>
-              <a href="/cv.pdf" download="CV_Tran_Gia_Bao.pdf">
+              <a href="/CV_Tran_Gia_Bao.pdf" download="CV_Tran_Gia_Bao.pdf">
                 <Button variant="outline">
                   Download CV <Download className="w-5 h-5" />
                 </Button>
