@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { Button } from "@/components/Button";
 import { ArrowRight, Download, Sparkles } from "lucide-react";
 import { GithubIcon } from "@/components/SocialIcons";
+import { TiltCard } from "@/components/TiltCard";
 
 // My skills
 const skills = [
@@ -21,27 +22,6 @@ const skills = [
 ]
 
 export const Hero = () => {
-  // 3D Tilt effect state for profile card hover
-  const [tilt, setTilt] = useState({ x: 0, y: 0, opacity: 0, cursorX: 0, cursorY: 0 });
-
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    // Calculate rotation angles (max 12 deg)
-    const rotateX = ((y - centerY) / centerY) * -12;
-    const rotateY = ((x - centerX) / centerX) * 12;
-
-    setTilt({ x: rotateX, y: rotateY, opacity: 1, cursorX: x, cursorY: y });
-  };
-
-  const handleMouseLeave = () => {
-    setTilt({ x: 0, y: 0, opacity: 0, cursorX: 0, cursorY: 0 });
-  };
-
   // Generate random dot positions and floating animation parameters once
   const dots = useMemo(() => {
     return Array.from({ length: 35 }, (_, i) => ({
@@ -159,43 +139,18 @@ export const Hero = () => {
           </div>
           {/* Right Column */}
           <div className="relative animate-fade-in animation-delay-300 flex flex-col items-center justify-center">
-            {/* Profile Image with Interactive 3D Tilt */}
+            {/* Profile Image using TiltCard component */}
             <div className="relative w-full max-w-sm lg:max-w-md mx-auto flex flex-col">
-              <div
-                className="relative glass rounded-3xl p-2 glow-border border-primary/20 flex-1 flex transition-transform duration-200 ease-out group cursor-pointer"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                style={{
-                  transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(${tilt.opacity ? 1.03 : 1}, ${tilt.opacity ? 1.03 : 1}, 1)`,
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                {/* Dynamic Light Glare Overlay */}
-                <div
-                  className="absolute inset-0 rounded-3xl pointer-events-none transition-opacity duration-300 z-20"
-                  style={{
-                    opacity: tilt.opacity,
-                    background: `radial-gradient(500px circle at ${tilt.cursorX}px ${tilt.cursorY}px, rgba(37, 99, 235, 0.2), transparent 60%)`,
-                  }}
-                />
-
+              <TiltCard maxTilt={12} className="glass rounded-3xl p-2 glow-border border-primary/20 flex-1 flex group">
                 <img
                   src="/profile-photo.png"
                   alt="Tran Gia Bao"
                   className="w-full h-full min-h-90 lg:min-h-105 object-cover object-top rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-[0_0_35px_color-mix(in_srgb,var(--color-primary)_45%,transparent)]"
-                  style={{
-                    transform: tilt.opacity ? "translateZ(25px)" : "translateZ(0px)",
-                    transition: "transform 0.2s ease-out, box-shadow 0.3s ease",
-                  }}
                 />
 
                 {/* Floating Badge */}
                 <div
                   className="absolute -bottom-5 -right-5 glass rounded-2xl px-4 py-3 shadow-xl border border-primary/30 flex items-center gap-3 animate-float z-30 pointer-events-none"
-                  style={{
-                    transform: tilt.opacity ? "translateZ(35px)" : "translateZ(0px)",
-                    transition: "transform 0.2s ease-out",
-                  }}
                 >
                   <div className="flex items-center gap-3">
                     <span className="relative flex h-3 w-3">
@@ -205,7 +160,7 @@ export const Hero = () => {
                     <span className="text-xs font-bold tracking-wide text-foreground uppercase">Available for work</span>
                   </div>
                 </div>
-              </div>
+              </TiltCard>
             </div>
           </div>
         </div>

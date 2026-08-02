@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Code2, Rocket, Sparkles, Layout, GraduationCap } from "lucide-react";
+import { TiltCard } from "@/components/TiltCard";
 
 // Highlight cards data
 const highlights = [
@@ -25,81 +26,24 @@ const highlights = [
   },
 ];
 
-// Interactive 3D Tilt Card Component
-const TiltCard = ({ highlight, index }) => {
-  const [tilt, setTilt] = useState({ x: 0, y: 0, opacity: 0, cursorX: 0, cursorY: 0 });
+// Highlight Card wrapper
+const HighlightCard = ({ highlight }) => {
   const Icon = highlight.icon;
 
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    // Calculate rotation angles (max 12 deg)
-    const rotateX = ((y - centerY) / centerY) * -12;
-    const rotateY = ((x - centerX) / centerX) * 12;
-
-    setTilt({ x: rotateX, y: rotateY, opacity: 1, cursorX: x, cursorY: y });
-  };
-
-  const handleMouseLeave = () => {
-    setTilt({ x: 0, y: 0, opacity: 0, cursorX: 0, cursorY: 0 });
-  };
-
   return (
-    <div
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(${tilt.opacity ? 1.04 : 1}, ${tilt.opacity ? 1.04 : 1}, 1)`,
-        transformStyle: "preserve-3d",
-      }}
-      className="relative glass rounded-3xl p-6 border border-border/50 hover:border-primary/50 transition-transform duration-200 ease-out group cursor-pointer overflow-hidden shadow-lg"
-    >
-      {/* Dynamic Radial Glare Spotlight */}
-      <div
-        className="absolute inset-0 rounded-3xl pointer-events-none transition-opacity duration-300 z-10"
-        style={{
-          opacity: tilt.opacity,
-          background: `radial-gradient(400px circle at ${tilt.cursorX}px ${tilt.cursorY}px, rgba(37, 99, 235, 0.18), transparent 80%)`,
-        }}
-      />
-
-      {/* 3D Depth Layer 1: Icon */}
-      <div
-        style={{
-          transform: tilt.opacity ? "translateZ(30px)" : "translateZ(0px)",
-          transition: "transform 0.2s ease-out",
-        }}
-        className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 mb-5 shadow-sm"
-      >
+    <TiltCard maxTilt={12} className="glass rounded-3xl p-6 border border-border/50 hover:border-primary/50 group overflow-hidden shadow-lg">
+      <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 mb-5 shadow-sm">
         <Icon className="w-6 h-6" />
       </div>
 
-      {/* 3D Depth Layer 2: Title */}
-      <h3
-        style={{
-          transform: tilt.opacity ? "translateZ(20px)" : "translateZ(0px)",
-          transition: "transform 0.2s ease-out",
-        }}
-        className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors"
-      >
+      <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">
         {highlight.title}
       </h3>
 
-      {/* 3D Depth Layer 3: Description */}
-      <p
-        style={{
-          transform: tilt.opacity ? "translateZ(10px)" : "translateZ(0px)",
-          transition: "transform 0.2s ease-out",
-        }}
-        className="text-sm text-muted-foreground leading-relaxed"
-      >
+      <p className="text-sm text-muted-foreground leading-relaxed">
         {highlight.description}
       </p>
-    </div>
+    </TiltCard>
   );
 };
 
@@ -153,7 +97,7 @@ export const About = () => {
           {/* Right Column - 3D Tilt Highlight Cards Grid */}
           <div className="grid sm:grid-cols-2 gap-6">
             {highlights.map((highlight, index) => (
-              <TiltCard key={`about-highlight-${index}`} highlight={highlight} index={index} />
+              <HighlightCard key={`about-highlight-${index}`} highlight={highlight} />
             ))}
           </div>
         </div>
